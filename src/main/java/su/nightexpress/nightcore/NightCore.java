@@ -19,6 +19,7 @@ import su.nightexpress.nightcore.util.text.tag.Tags;
 import java.util.HashSet;
 import java.util.Set;
 
+// just need this comment to commit lol
 public class NightCore extends NightPlugin implements ImprovedCommands {
 
     private final Set<NightPlugin> childrens;
