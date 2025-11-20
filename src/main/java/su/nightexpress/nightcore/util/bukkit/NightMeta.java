@@ -299,10 +299,10 @@ public class NightMeta implements Writeable {
             }
 
             if (this.color != null) {
-                switch (meta) {
-                    case LeatherArmorMeta armorMeta -> armorMeta.setColor(this.color);
-                    case PotionMeta potionMeta -> potionMeta.setColor(this.color);
-                    default -> {}
+                if (meta instanceof LeatherArmorMeta) {
+                    ((LeatherArmorMeta) meta).setColor(this.color);
+                } else if (meta instanceof PotionMeta) {
+                    ((PotionMeta) meta).setColor(this.color);
                 }
             }
         });
