@@ -38,12 +38,7 @@ public abstract class NightPlugin extends JavaPlugin implements NightCorePlugin 
     @Override
     public void onEnable() {
 //        Version.printCaution(this);
-        if (Version.getCurrent().isDropped()) {
-            //TODO SET THE GETCURRENT VARIABLE TO HARDCODED 1.20.4!
-            // THEN CONTINUE BUG FIXING AFTER
-            System.out.println("VERSION IS DROPPED!");
-            return;
-        }
+        Version.setCurrent();
 
 //        if (!this.isCore()) {
 //            Plugins.getCore().addChildren(this);

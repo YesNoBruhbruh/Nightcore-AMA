@@ -109,6 +109,10 @@ public enum Version {
         return current;
     }
 
+    public static void setCurrent() {
+         current = Version.V1_20_R3;
+    }
+
     public static boolean isSpigot() {
         return software.isSpigot();
     }
