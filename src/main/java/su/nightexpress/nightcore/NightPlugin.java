@@ -37,11 +37,11 @@ public abstract class NightPlugin extends JavaPlugin implements NightCorePlugin 
 
     @Override
     public void onEnable() {
-        Version.printCaution(this);
-        if (Version.getCurrent().isDropped()) {
-            this.getPluginManager().disablePlugin(this);
-            return;
-        }
+//        Version.printCaution(this);
+//        if (Version.getCurrent().isDropped()) {
+//            this.getPluginManager().disablePlugin(this);
+//            return;
+//        }
 
         if (!this.isCore()) {
             Plugins.getCore().addChildren(this);
