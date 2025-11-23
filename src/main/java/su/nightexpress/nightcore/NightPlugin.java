@@ -43,9 +43,9 @@ public abstract class NightPlugin extends JavaPlugin implements NightCorePlugin 
 //            return;
 //        }
 
-        if (!this.isCore()) {
-            Plugins.getCore().addChildren(this);
-        }
+//        if (!this.isCore()) {
+//            Plugins.getCore().addChildren(this);
+//        }
 
         long loadTook = System.currentTimeMillis();
         this.loadManagers();
