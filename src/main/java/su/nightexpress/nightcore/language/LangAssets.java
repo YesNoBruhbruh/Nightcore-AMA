@@ -2,9 +2,7 @@ package su.nightexpress.nightcore.language;
 
 import org.bukkit.Keyed;
 import org.bukkit.Material;
-import org.bukkit.Registry;
 import org.bukkit.World;
-import org.bukkit.damage.DamageType;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.EntityType;
 import org.bukkit.potion.PotionEffectType;
@@ -29,20 +27,11 @@ public class LangAssets {
 
         String assetsCode = downloadAssets(core, langCode);
         config = FileConfig.loadOrExtract(core, LangManager.DIR_LANG, getFileName(assetsCode));
-
-        if (Version.isAtLeast(Version.MC_1_21)) {
-            loadDamageTypes();
-        }
     }
 
     public static void shutdown() {
         config.saveChanges();
         config = null;
-    }
-
-    @SuppressWarnings("UnstableApiUsage")
-    private static void loadDamageTypes() {
-        BukkitThing.allFromRegistry(Registry.DAMAGE_TYPE).forEach(damageType -> getOrCreate("DamageType", damageType));
     }
 
     @NotNull
@@ -103,12 +92,6 @@ public class LangAssets {
     @NotNull
     public static String get(@NotNull Enchantment enchantment) {
         return getOrCreate("Enchantment", enchantment);
-    }
-
-    @SuppressWarnings("UnstableApiUsage")
-    @NotNull
-    public static String get(@NotNull DamageType damageType) {
-        return getOrCreate("DamageType", damageType);
     }
 
     @NotNull
