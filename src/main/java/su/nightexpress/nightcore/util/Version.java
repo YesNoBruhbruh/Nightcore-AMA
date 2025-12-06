@@ -28,7 +28,7 @@ public enum Version {
     public static final  String                CRAFTBUKKIT_PACKAGE = Bukkit.getServer().getClass().getPackage().getName();
     private static final Set<VersionComponent> LOADED_COMPONENTS   = new HashSet<>();
 
-    private static Version current;
+    private static Version current = V1_20_R3;
     private static boolean spigot;
 
     private final Status status;
@@ -60,7 +60,7 @@ public enum Version {
         String bukkitName = core.getServer().getName();
         String exact = bukkitVersion.split("-")[0];
 
-        current = Stream.of(values()).sorted(Comparator.reverseOrder()).filter(version -> exact.equalsIgnoreCase(version.getLocalized())).findFirst().orElse(UNKNOWN);
+//        current = Stream.of(values()).sorted(Comparator.reverseOrder()).filter(version -> exact.equalsIgnoreCase(version.getLocalized())).findFirst().orElse(UNKNOWN);
         spigot = bukkitName.equalsIgnoreCase("Spigot");
         core.info("Server version detected as " + bukkitName + " " + current.getLocalized() + ".");
 
